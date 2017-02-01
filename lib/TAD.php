@@ -272,11 +272,11 @@ class TAD
         $this->check_for_valid_command($command) &&
         $this->check_for_unrecognized_args($command_args);
 
-        if (in_array($command, TADSoap::get_commands_available())) {
-            $response = $this->execute_command_via_tad_soap($command, $command_args);
-        } else {
+        //if (in_array($command, TADSoap::get_commands_available())) {
+        //    $response = $this->execute_command_via_tad_soap($command, $command_args);
+        //} else {
             $response = $this->execute_command_via_zklib($command, $command_args);
-        }
+        //}
 
         $this->check_for_refresh_tad_db($command);
 
